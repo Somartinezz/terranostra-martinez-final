@@ -1,0 +1,20 @@
+.footer{		
+	h5{
+		font-size: 1.2em;
+		line-height: 1.8em;
+		color: map-get($map:$palette,$key:'seis_1');
+		font-weight: 700;
+    }
+	ul{
+		li{
+			a{
+		        color: map-get($map:$palette,$key:'cinco_0');
+                font-size: 1em;
+                line-height: 1em;
+                font-weight: 600;
+                text-decoration: none;
+            }
+		}
+	}
+
+}

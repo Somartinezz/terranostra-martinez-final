@@ -1,0 +1,102 @@
+/*mapa*/
+
+.map-responsive {
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
+	height: 0;
+  
+	iframe {
+	  left: 0;
+	  top: 0;
+	  height: 100%;
+	  width: 100%;
+	  position: absolute;
+	}
+  }
+  
+  /* Tabla responsive desing */
+  
+  .container {
+	width: 100%;
+	max-width: 1000px;
+	margin: auto;
+	font-family: $open-sans;
+  }
+  
+  .table {
+	width: 100%;
+	border: solid #b2d4d0 1px;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	table-layout: fixed;
+  
+	tr {
+		background-color: map-get($map:$palette,$key:'cuatro_');
+	  border: #27576a;
+	}
+  
+	th, td {
+	  font-size: 16px;
+	  padding: 8px;
+	  text-align: center;
+	}
+  
+	thead th {
+	  text-transform: uppercase;
+	  background-color: map-get($map:$palette,$key:'cinco')
+	}
+  
+	tbody {
+	  tr:hover {
+		background-color: map-get($map:$palette,$key:'siete_0')
+	  }
+  
+	  td:hover {
+		background-color: map-get($map:$palette,$key:'cuatro')
+	  }
+	}
+  }
+  
+  @media screen and (max-width: 600px) {
+	.table {
+	  border: 0px;
+  
+	  caption {
+		font-size: 22px;
+	  }
+  
+	  thead {
+		display: none;
+	  }
+  
+	  tr {
+		margin-bottom: 8px;
+		border-bottom: solid #27576a 8px;
+		display: block;
+	  }
+  
+	  th {
+		font-size: 12px;
+	  }
+  
+	  td {
+		font-size: 12px;
+		display: block;
+		border-bottom: solid #27576a 1px;
+		text-align: right;
+  
+		&:last-child {
+		  border-bottom: 0px;
+		}
+  
+		&:before {
+		  content: attr(data-label);
+		  font-weight: bold;
+		  text-transform: uppercase;
+		  float: left;
+		}
+	  }
+	}
+  }

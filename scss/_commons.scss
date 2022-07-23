@@ -1,0 +1,171 @@
+//map/
+$palette:(
+	'uno':#376579,
+	'dos':#80aec3,
+	'tres':#c0d9e6,
+	'cuatro':#cce0e7,
+	'cinco':#27576a,
+	'seis':#6B6666,
+	'siete':#3e6f73,
+	'ocho':#387784,
+	'uno_':#83494a,
+	'dos_':#498382,
+	'tres_':#d3e6e4,
+	'cuatro_':#b2d4d0,
+	'negro_':#000000,
+	'blanco_':#ffffff,
+	'uno_0':#EEEEEE,
+	'dos_1':#CCCCCC,
+	'tres_0':#AAAAAA,
+	'cuatro_1':#888888,
+	'cinco_0':#555555,
+	'seis_1':#444444,
+	'siete_0':#FDFBF8,
+	'ocho_1':#F4E0C3,
+	'nueve_0':#D7C3A7,
+	'diez_1':#BAA78C,
+	'once_0':#9D8B72,
+	'doce_1':#7F705A,
+	'trece_0':#625643,
+	'catorce_1':#333333,);
+
+//sizes/
+$w-a:auto;
+$w-100:100%;
+$w-75:75%;
+$w-70:70%;
+$w-50:50%;
+$w-25:25%;
+
+//Buttons/
+.btnPrimary{
+	background-color: map-get($map:$palette,$key:'dos_');
+	color: map-get($map:$palette,$key:'blanco_');
+	font-weight: 700;
+	padding: 12px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	&:hover{
+		background-color: map-get($map:$palette,$key:'cinco');
+		color: map-get($map:$palette,$key:'blanco_');
+		cursor: pointer;
+	}
+}
+.btnPrimaryRounded{
+	@extend.btnPrimary;
+	border-radius: 8px;
+}
+
+.btnPrimary2{
+	background-color: map-get($map:$palette,$key:'blanco_');
+	color: map-get($map:$palette,$key:'siete');
+	font-weight: 700;
+	padding: 16px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+	&:hover{
+		background-color: map-get($map:$palette,$key:'once_0');
+		color: map-get($map:$palette,$key:'blanco_');
+		cursor: pointer;
+	}
+}
+.btnPrimary2Rounded{
+	@extend.btnPrimary2;
+	border-radius: 8px;
+}
+
+.btnSecondary{
+	background-color: transparent;
+	border-color: map-get($map:$palette,$key:'blanco_');
+	color: map-get($map:$palette,$key:'cinco');
+	padding: 12px;
+	margin: 16px;
+	font-weight: 700;
+	&:hover{
+		background-color: map-get($map:$palette,$key:'uno_');
+		border-color: map-get($map:$palette,$key:'siete_0');
+		color: map-get($map:$palette,$key:'siete_0');
+		cursor: pointer;
+	}
+}
+.btnSecondaryRounded{
+	@extend.btnSecondary;
+	border-radius: 8px;
+}
+
+
+//Text/
+@mixin text($font-size,$line-height,$color,$weight){
+	font-size: $font-size;
+	line-height: $line-height;
+	color: $color;
+	font-weight: $weight;
+	margin-top: 8px;
+	margin-bottom: 8px;
+
+}
+
+.textTitleXL{
+	@include text(3em,1.5em,map-get($map:$palette,$key:'cinco'),700)
+}
+.textTitleL{
+	@include text(2em,1.2em,map-get($map:$palette,$key:'cinco'),700)
+}
+.textTitleM{
+	@include text(1.2em,1em,map-get($map:$palette,$key:'cinco'),700)
+}
+.textTitleM2{
+	@include text(1.2em,1em,map-get($map:$palette,$key:'sc05'),700)
+}
+.textTitleXLDark{
+	@include text(3em,1.5em,map-get($map:$palette,$key:'seis_1'),700)
+}
+.textTitleLDark{
+	@include text(2em,1.2em,map-get($map:$palette,$key:'blanco_'),700)
+}
+.textTitleMDark{
+	@include text(1em,1em,map-get($map:$palette,$key:'negro_'),700)
+}
+.textParagraph{
+	@include text(1.2em,1.5em,map-get($map:$palette,$key:'seis_1'),400)
+}
+.textParagraph02{
+	@include text(1em,1.2em,map-get($map:$palette,$key:'negro_'),400)
+}
+.textParagraphDark{
+	@include text(1em,1.2em,map-get($map:$palette,$key:'negro_'),400)
+}
+
+
+//Backgrounds/
+.BgLight{
+	background-color: map-get($map:$palette,$key:'tres');
+}
+.BgLight2{
+	background-color: map-get($map:$palette,$key:'cuatro_');
+}
+
+.BgMedium{
+	background-color: map-get($map:$palette,$key:'uno');
+}
+.BgDark{
+	background-color: map-get($map:$palette,$key:'tres');
+}
+.BgDark2{
+	background-color: map-get($map:$palette,$key:'cuatro');
+}
+
+//Border/
+.Border01{
+	border-color: map-get($map:$palette,$key:'siete');
+}
+
+//Animations/
+.scale1{
+	transform: scale(1);
+	transition: transform 1.1s;
+	&:hover{
+		transform: scale(1.08);
+		transition: transform 1.3s;
+	}
+}
